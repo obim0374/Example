@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>TutorCenter Pro</h1>
+        <p><i>Complete Student Mangement System</i></p>
+
+        <p>
+            <a href="">Student directory</a>|
+            <a href="">Add New Student</a>|
+            <a href="">Update Student Info</a>|
+            <a href="">Generate Reports</a>|           
+        </p>
+
+        <h3>Current Student Directory</h3>
+        <p>This table displays all currently enrolled students with their essential information. Use the forms below to add new students or update existing records.</p>
+        <p style="text-align: center;">Active students - Fall 2025 Semester</p>
+    
+    </div>
+    <div>
+        <table border="2">
+          <tr>
+            <th>Student Id</th>
+            <th>Full name</th>
+            <th>Age</th>
+            <th>Grade level</th>
+            <th>subject areas</th>
+            <th>Tutor Assigned</th>
+            <th>Status</th>
+            <th>Contact Info</th>
+          </tr>
+
+          <tr>
+            <td>STU001</td>
+            <td>Emma Rodriguez</td>
+            <td>16</td>
+            <td>11th Grade</td>
+            <td>Mathematics , Physics</td>
+            <td>Dr. Sarah Johnson</td>
+            <td>Active</td>
+            <td><a href="">emma.r@gmail.com <br>(555) 123-4567</a></td>
+          </tr>
+
+          <tr>
+            <td>STU002</td>
+            <td>Marcus Chen</td>
+            <td>14</td>
+            <td>9th Grade</td>
+            <td>English literature, History</td>
+            <td>Prof. Michael Davis</td>
+            <td>Active</td>
+            <td><a href="">marcus.chen@gmail.com <br> (555) 987-6543</a></td>
+          </tr>
+
+          <tr>
+            <td>STU003</td>
+            <td>Sophia Williams</td>
+            <td>17</td>
+            <td>12th Grade</td>
+            <td>Chemistry, Biology , SAT prep</td>
+            <td>Dr. Lisa Anderson</td>
+            <td>Active</td>           
+            <td><a href="">sophia.w@gmail.com <br> (555) 666-7890</a></td>
+          </tr>
+          <tr>
+            <td>STU004</td>
+            <td>James Thompson</td>
+            <td>15</td>
+            <td>10th Grade</td>
+            <td>Algebra, Geometry</td>
+            <td>Mr. Robert Wilson</td>
+            <td>On Hold</td>
+            <td><a href="">james.t@gmail.com <br> (555) 444-5555</a></td>
+          </tr>
+
+          <tr>
+            <td colspan="6"><b>Total Active Students</b></td>
+            <td>3 active, 1 on Hold</td>
+            <td><b>4 Total</b></td>
+          </tr>
+        </table>
+    </div>
+
+    <div>
+        <h1>Add New Student</h1>
+        <p>Complete this comprehensive form to register a new student in our tutoring program. All required fields must be filled out before submission.</p>
+        <form action="#">
+            <fieldset>
+                <legend>Student Personal information</legend>
+                <!-- texts in form -->
+                 <div>
+                    <label for="studentid">Student ID:</label><br>
+                    <input type="text" id="studentid" name="studentid" placeholder="STU001" required>
+                 </div><br>
+
+                 <div>
+                    <label for="firstname">First name:</label><br>
+                    <input type="text" id="firstname" name="firstname" required>
+                 </div><br>
+
+                 <div>
+                    <label for="lastname">Last Name</label><br>
+                    <input type="text" id="lastname" name="=lastname" required>
+                 </div><br>
+
+                 <div>
+                    <label for="Age">Age:</label><br>
+                    <input type="number" id="Age" name="Age" min="1" max="100" required>
+                 </div><br>
+
+                 <div>
+                    <label for="DOB">Date of Birth:</label><br>
+                    <input type="date" id="DOB" name="DOB"required >
+                 </div><br>
+
+                 <div>
+                    <label for="gradelevel">Current Grade level</label><br>
+                    <select name="gradelevel" id="gradelevel" required>
+                        <option value="select grade level">select grade level</option>
+                        <option value="9th grade">9th grade</option>
+                        <option value="10th grade">10th grade</option>
+                        <option value="11th grade">11th grade</option>
+                        <option value="12th grade">12th grade</option>
+                    </select>
+                 </div>               
+            </fieldset><br>
+
+            <fieldset>
+              <legend>Contact  information</legend>
+              <!-- texts in form -->
+               <div>
+                <label for="studentemail">Student Email:</label><br>
+                <input type="text" id="studentemail" name="studentemail" placeholder="student@example.com" required>
+               </div><br>
+
+               <div>
+                <label for="phone">Student Phone:</label><br>
+                <input type="text" id="phone" name="phone" placeholder="123-456-7890" required>
+               </div><br>
+
+               <div>
+                <label for="guardianname">Parent/Guardian Name:</label><br>
+                <input type="text" id="guardianname" name="guardianname" required>
+               </div><br>
+
+               <div>
+                <label for="Email">Parent/Guardian Email:</label><br>
+                <input type="email" id="Email" name="Email" placeholder="parent@example.com" required>
+               </div><br>
+
+               <div>
+                <label for="parentphone">Parent/Guardian Phone:</label><br>
+                <input type="text" id="parentphone" name="parentphone" placeholder="123-456-7890" required>
+               </div><br>
+
+               <div>
+                <label for="emergency">Emergency Contact:</label><br>
+                <input type="text" id="emergency" name="emergency" placeholder="Name and Phone Number" required>
+               </div><br>
+            </fieldset><br>
+
+            <fieldset>
+              <legend>Academic Information</legend>
+              <div>
+                <p>Subject Areas Needing Tutoring:</p><br>
+                <div>
+                  <label for="Mathematics">Mathematics (Algebra, Geometry, Calculus)</label>
+                  <input  type="checkbox" id="Mathematics" name="subjects" value="Mathematics">
+                </div><br>
+                <div>
+                  <label for="sciences">Sciences (Biology, Chemistry, Physics)</label>
+                  <input type="checkbox" id="sciences" name="subjects" value="sciences">
+                </div><br>
+
+                <div>
+                  <label for="english">English (Literature, Writing, Grammar)</label>
+                  <input type="checkbox" id="english" name="subjects" value="english">
+                </div><br>
+
+                <div>
+                  <label for="social-studies">Social Studies (History, Government)</label>
+                  <input type="checkbox" id="social-studies" name="subjects" value="social-studies">
+                </div><br>
+
+                <div>
+                  <label for="test-preparation">Test Preparation (SAT, ACT, AP Exams)</label>
+                  <input type="checkbox" id="test-preparation" name="subjects" value="test-preparation">
+                </div><br>
+
+                <div>
+                  <label for="others">Others (please specify below)</label>
+                  <input type="checkbox" id="others" name="subjects" value="others">
+                  <!-- text area -->
+                  <div>
+                    <label for="gpa">Current GPA(if available)</label><br>
+                    <textarea name="gpa" id="gpa" placeholder="3.5" rows="1" ></textarea>
+                  </div><br>
+
+                  <div>
+                    <label for="goals">Specific Learning Goals</label><br>
+                    <textarea name="goals" id="goals" placeholder="Describe what the student hopes to achieve through tutoring...." rows="8"  cols="70"></textarea>
+                  </div>
+                  
+                  <div>
+                    <label for="challenges">Learning Challenges or Special Needs:</label><br>
+                    <textarea name="challenges" id="challenges" placeholder="Any learning differences, accommodations needed, or specific challenges ..." rows="8"  cols="70"></textarea>
+                  </div>   
+                </div>
+              </div>
+            </fieldset><br>
+        </form>
+    </div>
+
+    
+</body>
+</html>
