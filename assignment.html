@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/CSS EXAMPLE/example.css">
+    <title>Assignment</title>
 </head>
 <body>
-    <div>
+    <div class="container">
+      <header>
         <h1>TutorCenter Pro</h1>
         <p><i>Complete Student Mangement System</i></p>
 
@@ -20,9 +22,10 @@
         <h3>Current Student Directory</h3>
         <p>This table displays all currently enrolled students with their essential information. Use the forms below to add new students or update existing records.</p>
         <p style="text-align: center;">Active students - Fall 2025 Semester</p>
-    
-    </div>
-    <div>
+    </header>
+
+    <main>
+      <section id="student-directory">
         <table border="2">
           <tr>
             <th>Student Id</th>
@@ -84,86 +87,52 @@
             <td><b>4 Total</b></td>
           </tr>
         </table>
-    </div>
+      </section>
 
-    <div>
+      <section id="add-student" class="form-section">
+        
         <h1>Add New Student</h1>
         <p>Complete this comprehensive form to register a new student in our tutoring program. All required fields must be filled out before submission.</p>
         <form action="#">
             <fieldset>
                 <legend>Student Personal information</legend>
-                <!-- texts in form -->
-                 <div>
-                    <label for="studentid">Student ID:</label><br>
-                    <input type="text" id="studentid" name="studentid" placeholder="STU001" required>
-                 </div><br>
+                <!-- texts in form -->            
+                  <label for="studentid">Student ID:</label><br>
+                  <input type="text" id="studentid" name="studentid" placeholder="STU001" required>
+                  <br>
 
-                 <div>
-                    <label for="firstname">First name:</label><br>
-                    <input type="text" id="firstname" name="firstname" required>
-                 </div><br>
+              
+                  <label for="firstname">First name:</label><br>
+                  <input type="text" id="firstname" name="firstname" required>
+                  <br>
 
-                 <div>
-                    <label for="lastname">Last Name</label><br>
-                    <input type="text" id="lastname" name="=lastname" required>
-                 </div><br>
+                
+                  <label for="lastname">Last Name</label><br>
+                  <input type="text" id="lastname" name="=lastname" required>
+                  <br>
 
-                 <div>
-                    <label for="Age">Age:</label><br>
-                    <input type="number" id="Age" name="Age" min="1" max="100" required>
-                 </div><br>
+                 
+                  <label for="Age">Age:</label><br>
+                  <input type="number" id="Age" name="Age" min="1" max="100" required>
+                  <br>
 
-                 <div>
-                    <label for="DOB">Date of Birth:</label><br>
-                    <input type="date" id="DOB" name="DOB"required >
-                 </div><br>
+                 
+                  <label for="DOB">Date of Birth:</label><br>
+                  <input type="date" id="DOB" name="DOB"required >
+                  <br>
 
-                 <div>
-                    <label for="gradelevel">Current Grade level</label><br>
-                    <select name="gradelevel" id="gradelevel" required>
+                 
+                  <label for="gradelevel">Current Grade level</label><br>
+                  <select name="gradelevel" id="gradelevel" required>
                         <option value="select grade level">select grade level</option>
                         <option value="9th grade">9th grade</option>
                         <option value="10th grade">10th grade</option>
                         <option value="11th grade">11th grade</option>
                         <option value="12th grade">12th grade</option>
-                    </select>
-                 </div>               
+                  </select>                        
             </fieldset><br>
 
-            <fieldset>
-              <legend>Contact  information</legend>
-              <!-- texts in form -->
-               <div>
-                <label for="studentemail">Student Email:</label><br>
-                <input type="text" id="studentemail" name="studentemail" placeholder="student@example.com" required>
-               </div><br>
-
-               <div>
-                <label for="phone">Student Phone:</label><br>
-                <input type="text" id="phone" name="phone" placeholder="123-456-7890" required>
-               </div><br>
-
-               <div>
-                <label for="guardianname">Parent/Guardian Name:</label><br>
-                <input type="text" id="guardianname" name="guardianname" required>
-               </div><br>
-
-               <div>
-                <label for="Email">Parent/Guardian Email:</label><br>
-                <input type="email" id="Email" name="Email" placeholder="parent@example.com" required>
-               </div><br>
-
-               <div>
-                <label for="parentphone">Parent/Guardian Phone:</label><br>
-                <input type="text" id="parentphone" name="parentphone" placeholder="123-456-7890" required>
-               </div><br>
-
-               <div>
-                <label for="emergency">Emergency Contact:</label><br>
-                <input type="text" id="emergency" name="emergency" placeholder="Name and Phone Number" required>
-               </div><br>
-            </fieldset><br>
-
+            
             <fieldset>
               <legend>Academic Information</legend>
               <div>
@@ -213,9 +182,173 @@
                 </div>
               </div>
             </fieldset><br>
-        </form>
-    </div>
 
+            <fieldset>
+              <legend>Scheduling Preferences</legend>
+              <!-- texts in form -->
+               <div>
+                <p>Preferred tutoring Days:</p><br>
+                <div>
+                  <label for="monday">Monday</label>
+                  <input type="checkbox" id="monday" name="tutoring-days" value="monday">
+                </div><br>
+                
+                <div>
+                  <label for="tuesday">Tuesday</label>
+                  <input type="checkbox" id="tuesday" name="tutoring-days" value="tuesday">
+                </div><br>
+                
+                <div>
+                  <label for="wednesday">Wednesday</label>
+                  <input type="checkbox" id="wednesday" name="tutoring-days" value="wednesday">
+                </div><br>
+                
+                <div>
+                  <label for="thursday">Thursday</label>
+                  <input type="checkbox" id="thursday" name="tutoring-days" value="thursday">
+                </div><br>
+                
+                <div>
+                  <label for="friday">Friday</label>
+                  <input type="checkbox" id="friday" name="tutoring-days" value="friday">
+                </div><br>
+                
+                <div>
+                  <label for="saturday">Saturday</label>
+                  <input type="checkbox" id="saturday" name="tutoring-days" value="saturday">
+                </div>
+                
+                <div>
+                  <label for="timeslot">Preferred Time Slot</label>
+                  <select name="timeslot" id="timeslot">.
+                    <option value="select-preferred-time">Select preferred Time</option>
+                    <option value="select-preferred-time">9am-12pm</option>
+                    <option value="select-preferred-time">1pm-4pm</option>
+                    <option value="select-preferred-time">5pm-7pm</option>
+                  </select>
+                </div><br>
+
+                <div>
+                  <p>Desired Session Frequency:</p>
+                  <div>
+                    <label for="once">Once per week</label>
+                    <input type="radio" id="once" name="session" value="once">
+                  </div><br>
+                  
+                  <div>
+                    <label for="twice">Twice per week</label>
+                    <input type="radio" id="twice" name="session" value="twice">
+                  </div><br>
+
+                  <div>
+                    <label for="three">Three times per week</label>
+                    <input type="radio" id="three" name="session" value="three">
+                  </div>
+
+                  <div>
+                    <label for="intense">Intensive (4+ times per week)</label>
+                    <input type="radio" id="intense" name="session" value="intense">
+                  </div>
+                </div>
+               </div>
+            </fieldset><br>
+
+            <fieldset>
+              <legend>Additional Information</legend>
+              <!-- texts in form -->
+               <div>
+                <label for="information">How did you hear about our tutoring center?</label><br>
+                <select name="information" id="information">
+                  <option value="select">Please select</option>
+                  <option value="friend">Through a friend</option>
+                  <option value="email">Email</option>
+                  <option value="ads">Internet ads</option>
+                  <option value="social-media">Social Media</option>
+                </select>
+               </div><br>
+
+               <div>
+                <label for="notes">Additional Notes or Comments:</label><br>
+                <textarea name="notes" id="notes" rows="6" cols="70" placeholder="Any other information that would help us serve your student better ..."></textarea>   
+               </div>
+
+               <div>
+                <label for="permission">I give permission for photos to be taken during tutoring sessions for educational purposes</label>
+                <input type="checkbox" id="permission" name="permission"><br>
+                
+                <label for="updates">I would like to receive newsletters and updates about the tutoring center</label>
+                <input type="checkbox" id="updates" name="updates"><br>
+                
+                <label for="agreement">I agree to the terms and conditions of the tutoring center</label>
+                <input type="checkbox" id="agreement" name="agreement"><br>
+               </div>
+            </fieldset>
+
+            <button type="submit">Register new Students</button>
+            <button type="reset">Clear All Fields</button>
+        </form>  
+      </section>
+
+      <section id="update-student" class="form-section">
+        <h1>Update Student Information</h1><br>
+        <p>Use this form to modify existing student records. First , select the student you want to update, the make the necessary changes</p>      
+        <form action="#">
+          <fieldset>
+            <legend>Select Student to update</legend>
+            <!-- texts in forms -->
+            <label for="update-student-select">Choose Student:</label>
+            <select id="update-student-select" name="update-student-select" required>
+                <option value="">Select a student to update</option>
+                <option value="STU001">STU001 - Emma Rodriguez</option>
+                <option value="STU002">STU002 - Marcus Chen</option>
+                <option value="STU003">STU003 - Sophia Williams</option>
+                <option value="STU004">STU004 - James Thompson</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Update Information</legend>
+            <!-- texts in forms -->
+            <label for="email">New Email Address</label><br>
+            <input type="email" id="email" class="email" placeholder="Enter new email if changed"><br>
+
+            <label for="update-phone">New Phone Number</label><br>
+            <input type="number" id="update-phone" class="update-phone" placeholder="Enter new phone if changed"><br>
+
+            <label for="update-gradelevel">Update Grade Level</label><br>
+            <select name="update-gradelevel" id="update-gradelevel">
+              <option value="">No change</option>
+              <option value="8th">8th Grade</option>
+              <option value="9th">9th Grade (Freshman)</option>
+              <option value="10th">10th Grade (Sophomore)</option>
+              <option value="11th">11th Grade (Junior)</option>
+              <option value="12th">12th Grade (Senior)</option>
+           </select><br>
+
+           <label for="update-status">Student Status:</label>
+
+           <label for="status-active">Active</label>
+           <input type="radio" id="status-active" name="update-status" value="active"><br>
+           
+           <label for="status-hold">On Hold</label>
+           <input type="radio" id="status-hold" name="update-status" value="hold"><br>
+           
+           <label for="status-graduated">Graduated</label>
+           <input type="radio" id="status-graduated" name="update-status" value="graduated"><br>
+                    
+           <label for="update-notes">Update Notes:</label>
+           <textarea id="update-notes" name="update-notes" 
+                    rows="3" 
+                    placeholder="Describe what changes were made and why..."
+                    required></textarea>
+          </fieldset>
+
+          
+          <button type="submit">Update Student Record</button>
+          <button type="reset">Reset Changes</button>
+        </form>
+      </section>
+    </main>
     
 </body>
 </html>

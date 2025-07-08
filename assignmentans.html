@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorCenter Pro - Student Management System</title>
+    <style>
+        /* Basic styling to make the project visually appealing */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .form-section {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        fieldset {
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        legend {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .status-active {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .status-inactive {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TutorCenter Pro</h1>
+            <p><em>Complete Student Management System</em></p>
+            <nav>
+                <a href="#student-directory">Student Directory</a> |
+                <a href="#add-student">Add New Student</a> |
+                <a href="#update-student">Update Student Info</a> |
+                <a href="#reports">Generate Reports</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="student-directory">
+                <h2>Current Student Directory</h2>
+                <p>This table displays all currently enrolled students with their essential information. Use the forms below to add new students or update existing records.</p>
+                
+                <table>
+                    <caption>Active Students - Fall 2025 Semester</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Student ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Grade Level</th>
+                            <th scope="col">Subject Areas</th>
+                            <th scope="col">Tutor Assigned</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Contact Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">STU001</th>
+                            <td>Emma Rodriguez</td>
+                            <td>16</td>
+                            <td>11th Grade</td>
+                            <td>Mathematics, Physics</td>
+                            <td>Dr. Sarah Johnson</td>
+                            <td class="status-active">Active</td>
+                            <td>
+                                <a href="mailto:emma.r@email.com">emma.r@email.com</a><br>
+                                <a href="tel:+15551234567">(555) 123-4567</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STU002</th>
+                            <td>Marcus Chen</td>
+                            <td>14</td>
+                            <td>9th Grade</td>
+                            <td>English Literature, History</td>
+                            <td>Prof. Michael Davis</td>
+                            <td class="status-active">Active</td>
+                            <td>
+                                <a href="mailto:marcus.chen@email.com">marcus.chen@email.com</a><br>
+                                <a href="tel:+15559876543">(555) 987-6543</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STU003</th>
+                            <td>Sophia Williams</td>
+                            <td>17</td>
+                            <td>12th Grade</td>
+                            <td>Chemistry, Biology, SAT Prep</td>
+                            <td>Dr. Lisa Anderson</td>
+                            <td class="status-active">Active</td>
+                            <td>
+                                <a href="mailto:sophia.w@email.com">sophia.w@email.com</a><br>
+                                <a href="tel:+15556667890">(555) 666-7890</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">STU004</th>
+                            <td>James Thompson</td>
+                            <td>15</td>
+                            <td>10th Grade</td>
+                            <td>Algebra, Geometry</td>
+                            <td>Mr. Robert Wilson</td>
+                            <td class="status-inactive">On Hold</td>
+                            <td>
+                                <a href="mailto:james.t@email.com">james.t@email.com</a><br>
+                                <a href="tel:+15554445555">(555) 444-5555</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6"><strong>Total Active Students</strong></td>
+                            <td><strong>3 Active, 1 On Hold</strong></td>
+                            <td><strong>4 Total</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section id="add-student" class="form-section">
+                <h2>Add New Student</h2>
+                <p>Complete this comprehensive form to register a new student in our tutoring program. All required fields must be filled out before submission.</p>
+                
+                <form action="add-student.php" method="post">
+                    <fieldset>
+                        <legend>Student Personal Information</legend>
+                        
+                        <label for="student-id">Student ID:</label>
+                        <input type="text" id="student-id" name="student-id" 
+                               pattern="STU[0-9]{3}" 
+                               placeholder="STU001" 
+                               title="Student ID must follow format STU001"
+                               required>
+                        
+                        <label for="first-name">First Name:</label>
+                        <input type="text" id="first-name" name="first-name" 
+                               minlength="2" maxlength="50" required>
+                        
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" id="last-name" name="last-name" 
+                               minlength="2" maxlength="50" required>
+                        
+                        <label for="student-age">Age:</label>
+                        <input type="number" id="student-age" name="student-age" 
+                               min="12" max="18" required>
+                        
+                        <label for="birth-date">Date of Birth:</label>
+                        <input type="date" id="birth-date" name="birth-date" required>
+                        
+                        <label for="grade-level">Current Grade Level:</label>
+                        <select id="grade-level" name="grade-level" required>
+                            <option value="">Select grade level</option>
+                            <option value="7th">7th Grade</option>
+                            <option value="8th">8th Grade</option>
+                            <option value="9th">9th Grade (Freshman)</option>
+                            <option value="10th">10th Grade (Sophomore)</option>
+                            <option value="11th">11th Grade (Junior)</option>
+                            <option value="12th">12th Grade (Senior)</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Contact Information</legend>
+                        
+                        <label for="student-email">Student Email:</label>
+                        <input type="email" id="student-email" name="student-email" 
+                               placeholder="student@example.com" required>
+                        
+                        <label for="student-phone">Student Phone:</label>
+                        <input type="tel" id="student-phone" name="student-phone" 
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                               placeholder="123-456-7890">
+                        
+                        <label for="parent-name">Parent/Guardian Name:</label>
+                        <input type="text" id="parent-name" name="parent-name" required>
+                        
+                        <label for="parent-email">Parent/Guardian Email:</label>
+                        <input type="email" id="parent-email" name="parent-email" 
+                               placeholder="parent@example.com" required>
+                        
+                        <label for="parent-phone">Parent/Guardian Phone:</label>
+                        <input type="tel" id="parent-phone" name="parent-phone" 
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                               placeholder="123-456-7890" required>
+                        
+                        <label for="emergency-contact">Emergency Contact:</label>
+                        <input type="text" id="emergency-contact" name="emergency-contact" 
+                               placeholder="Name and phone number" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Academic Information</legend>
+                        
+                        <p><strong>Subject Areas Needing Tutoring:</strong></p>
+                        <input type="checkbox" id="mathematics" name="subjects" value="mathematics">
+                        <label for="mathematics">Mathematics (Algebra, Geometry, Calculus)</label>
+                        
+                        <input type="checkbox" id="sciences" name="subjects" value="sciences">
+                        <label for="sciences">Sciences (Biology, Chemistry, Physics)</label>
+                        
+                        <input type="checkbox" id="english" name="subjects" value="english">
+                        <label for="english">English (Literature, Writing, Grammar)</label>
+                        
+                        <input type="checkbox" id="social-studies" name="subjects" value="social-studies">
+                        <label for="social-studies">Social Studies (History, Government)</label>
+                        
+                        <input type="checkbox" id="test-prep" name="subjects" value="test-prep">
+                        <label for="test-prep">Test Preparation (SAT, ACT, AP Exams)</label>
+                        
+                        <input type="checkbox" id="other-subjects" name="subjects" value="other">
+                        <label for="other-subjects">Other (please specify below)</label>
+                        
+                        <label for="current-gpa">Current GPA (if available):</label>
+                        <input type="number" id="current-gpa" name="current-gpa" 
+                               min="0" max="4" step="0.1" 
+                               placeholder="3.5">
+                        
+                        <label for="learning-goals">Specific Learning Goals:</label>
+                        <textarea id="learning-goals" name="learning-goals" 
+                                  rows="4" 
+                                  placeholder="Describe what the student hopes to achieve through tutoring..."
+                                  required></textarea>
+                        
+                        <label for="learning-challenges">Learning Challenges or Special Needs:</label>
+                        <textarea id="learning-challenges" name="learning-challenges" 
+                                  rows="3" 
+                                  placeholder="Any learning differences, accommodations needed, or specific challenges..."></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Scheduling Preferences</legend>
+                        
+                        <p><strong>Preferred Tutoring Days:</strong></p>
+                        <input type="checkbox" id="monday" name="preferred-days" value="monday">
+                        <label for="monday">Monday</label>
+                        
+                        <input type="checkbox" id="tuesday" name="preferred-days" value="tuesday">
+                        <label for="tuesday">Tuesday</label>
+                        
+                        <input type="checkbox" id="wednesday" name="preferred-days" value="wednesday">
+                        <label for="wednesday">Wednesday</label>
+                        
+                        <input type="checkbox" id="thursday" name="preferred-days" value="thursday">
+                        <label for="thursday">Thursday</label>
+                        
+                        <input type="checkbox" id="friday" name="preferred-days" value="friday">
+                        <label for="friday">Friday</label>
+                        
+                        <input type="checkbox" id="saturday" name="preferred-days" value="saturday">
+                        <label for="saturday">Saturday</label>
+                        
+                        <label for="preferred-time">Preferred Time Slot:</label>
+                        <select id="preferred-time" name="preferred-time" required>
+                            <option value="">Select preferred time</option>
+                            <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                            <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                            <option value="evening">Evening (4:00 PM - 8:00 PM)</option>
+                        </select>
+                        
+                        <label for="session-frequency">Desired Session Frequency:</label>
+                        <input type="radio" id="once-week" name="frequency" value="once-week" checked>
+                        <label for="once-week">Once per week</label>
+                        
+                        <input type="radio" id="twice-week" name="frequency" value="twice-week">
+                        <label for="twice-week">Twice per week</label>
+                        
+                        <input type="radio" id="three-week" name="frequency" value="three-week">
+                        <label for="three-week">Three times per week</label>
+                        
+                        <input type="radio" id="intensive" name="frequency" value="intensive">
+                        <label for="intensive">Intensive (4+ times per week)</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Additional Information</legend>
+                        
+                        <label for="how-heard">How did you hear about our tutoring center?</label>
+                        <select id="how-heard" name="how-heard">
+                            <option value="">Please select</option>
+                            <option value="friend-referral">Friend or family referral</option>
+                            <option value="school-counselor">School counselor recommendation</option>
+                            <option value="online-search">Online search</option>
+                            <option value="social-media">Social media</option>
+                            <option value="advertisement">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                        
+                        <label for="additional-notes">Additional Notes or Comments:</label>
+                        <textarea id="additional-notes" name="additional-notes" 
+                                  rows="3" 
+                                  placeholder="Any other information that would help us serve your student better..."></textarea>
+                        
+                        <input type="checkbox" id="photo-permission" name="photo-permission" value="yes">
+                        <label for="photo-permission">I give permission for photos to be taken during tutoring sessions for educational purposes</label>
+                        
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+                        <label for="newsletter">I would like to receive newsletters and updates about the tutoring center</label>
+                        
+                        <input type="checkbox" id="terms-agreement" name="terms-agreement" value="yes" required>
+                        <label for="terms-agreement">I agree to the terms and conditions of the tutoring center</label>
+                    </fieldset>
+
+                    <button type="submit">Register New Student</button>
+                    <button type="reset">Clear All Fields</button>
+                </form>
+            </section>
+
+            <section id="update-student" class="form-section">
+                <h2>Update Student Information</h2>
+                <p>Use this form to modify existing student records. First, select the student you want to update, then make the necessary changes.</p>
+                
+                <form action="update-student.php" method="post">
+                    <fieldset>
+                        <legend>Select Student to Update</legend>
+                        
+                        <label for="update-student-select">Choose Student:</label>
+                        <select id="update-student-select" name="update-student-select" required>
+                            <option value="">Select a student to update</option>
+                            <option value="STU001">STU001 - Emma Rodriguez</option>
+                            <option value="STU002">STU002 - Marcus Chen</option>
+                            <option value="STU003">STU003 - Sophia Williams</option>
+                            <option value="STU004">STU004 - James Thompson</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Update Information</legend>
+                        
+                        <label for="update-email">New Email Address:</label>
+                        <input type="email" id="update-email" name="update-email" 
+                               placeholder="Enter new email if changed">
+                        
+                        <label for="update-phone">New Phone Number:</label>
+                        <input type="tel" id="update-phone" name="update-phone" 
+                               placeholder="Enter new phone if changed">
+                        
+                        <label for="update-grade">Updated Grade Level:</label>
+                        <select id="update-grade" name="update-grade">
+                            <option value="">No change</option>
+                            <option value="8th">8th Grade</option>
+                            <option value="9th">9th Grade (Freshman)</option>
+                            <option value="10th">10th Grade (Sophomore)</option>
+                            <option value="11th">11th Grade (Junior)</option>
+                            <option value="12th">12th Grade (Senior)</option>
+                        </select>
+                        
+                        <label for="update-status">Student Status:</label>
+                        <input type="radio" id="status-active" name="update-status" value="active">
+                        <label for="status-active">Active</label>
+                        
+                        <input type="radio" id="status-hold" name="update-status" value="hold">
+                        <label for="status-hold">On Hold</label>
+                        
+                        <input type="radio" id="status-graduated" name="update-status" value="graduated">
+                        <label for="status-graduated">Graduated</label>
+                        
+                        <label for="update-notes">Update Notes:</label>
+                        <textarea id="update-notes" name="update-notes" 
+                                  rows="3" 
+                                  placeholder="Describe what changes were made and why..."
+                                  required></textarea>
+                    </fieldset>
+
+                    <button type="submit">Update Student Record</button>
+                    <button type="reset">Reset Changes</button>
+                </form>
+            </section>
+
+            <section id="reports" class="form-section">
+                <h2>Generate Reports</h2>
+                <p>Create custom reports based on student data. Select your criteria and generate comprehensive reports for analysis.</p>
+                
+                <form action="generate-report.php" method="get">
+                    <fieldset>
+                        <legend>Report Parameters</legend>
+                        
+                        <label for="report-type">Report Type:</label>
+                        <select id="report-type" name="report-type" required>
+                            <option value="">Select report type</option>
+                            <option value="enrollment">Student Enrollment Summary</option>
+                            <option value="subjects">Subject Distribution Analysis</option>
+                            <option value="tutor-assignments">Tutor Assignment Report</option>
+                            <option value="contact-list">Student Contact Directory</option>
+                        </select>
+                        
+                        <label for="date-range">Date Range:</label>
+                        <input type="date" id="start-date" name="start-date">
+                        <label for="end-date">to</label>
+                        <input type="date" id="end-date" name="end-date">
+                        
+                        <p><strong>Include in Report:</strong></p>
+                        <input type="checkbox" id="include-inactive" name="include-inactive" value="yes">
+                        <label for="include-inactive">Include inactive students</label>
+                        
+                        <input type="checkbox" id="include-contact" name="include-contact" value="yes" checked>
+                        <label for="include-contact">Include contact information</label>
+                        
+                        <input type="checkbox" id="include-grades" name="include-grades" value="yes">
+                        <label for="include-grades">Include academic information</label>
+                    </fieldset>
+
+                    <button type="submit">Generate Report</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <hr>
+            <p>&copy; 2025 TutorCenter Pro. All rights reserved.</p>
+            <p><small>This student management system demonstrates HTML tables and forms working together in a real-world application.</small></p>
+        </footer>
+    </div>
+</body>
+</html>

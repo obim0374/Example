@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alex Morgan - Full Stack Web Developer specializing in accessible, semantic HTML and modern CSS frameworks">
+    <meta name="keywords" content="web developer, HTML, CSS, JavaScript, accessibility, portfolio">
+    <meta name="author" content="Alex Morgan">
+    <title>Alex Morgan - Full Stack Web Developer Portfolio</title>
+    
+    <style>
+        /* Enhanced styling for semantic portfolio */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --section-padding: 2rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: var(--section-padding) 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav a:hover, nav a:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            outline: 2px solid white;
+        }
+        
+        nav a[aria-current="page"] {
+            background-color: var(--accent-color);
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: var(--section-padding) 0;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            padding: var(--section-padding);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        
+        section h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Article Styles */
+        article {
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        article:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        article header {
+            background: none;
+            padding: 0;
+            text-align: left;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+        
+        article h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Media Styles */
+        figure {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        
+        figcaption {
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        video, audio {
+            width: 100%;
+            max-width: 800px;
+            margin: 1rem 0;
+        }
+        
+        /* Aside Styles */
+        aside {
+            background: #f1f3f4;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        aside h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Form Styles */
+        form {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: 2px solid var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover, button:focus {
+            background: var(--primary-color);
+            outline: 2px solid var(--accent-color);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: var(--section-padding) 0;
+            margin-top: 2rem;
+        }
+        
+        footer nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Utility Classes */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            section {
+                padding: 1rem;
+            }
+            
+            footer nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Alex Morgan</h1>
+            <p class="tagline">Full Stack Web Developer & Accessibility Advocate</p>
+            
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#about" aria-current="page">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">About Me</h2>
+                
+                <article>
+                    <header>
+                        <h3>Professional Background</h3>
+                    </header>
+                    
+                    <figure>
+                        <img src="profile-photo.jpg" alt="Alex Morgan headshot - professional photo showing a friendly person with glasses" width="300" height="300">
+                        <figcaption>Professional headshot taken at TechConf 2024</figcaption>
+                    </figure>
+                    
+                    <p>I'm a passionate <strong>full stack web developer</strong> with over <span class="highlight">5 years of experience</span> creating accessible, semantic, and performant web applications. My journey began with a simple curiosity about how websites work, and has evolved into a deep commitment to building inclusive digital experiences.</p>
+                    
+                    <p>I specialize in <em>semantic HTML</em>, modern CSS frameworks, and JavaScript applications that prioritize user experience and accessibility. Every project I work on follows <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> standards and semantic markup principles.</p>
+                    
+                    <blockquote cite="https://www.w3.org/WAI/fundamentals/accessibility-intro/">
+                        <p>"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect."</p>
+                        <footer>— <cite>Tim Berners-Lee, W3C Director and inventor of the World Wide Web</cite></footer>
+                    </blockquote>
+                </article>
+                
+                <aside aria-label="Quick facts about Alex">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Location</dt>
+                        <dd>San Francisco, CA</dd>
+                        <dt>Experience</dt>
+                        <dd>5+ years in web development</dd>
+                        <dt>Education</dt>
+                        <dd>B.S. Computer Science, Stanford University</dd>
+                        <dt>Certifications</dt>
+                        <dd>Certified Professional in Accessibility Core Competencies (CPACC)</dd>
+                    </dl>
+                </aside>
+            </section>
+
+            <section id="skills" aria-labelledby="skills-heading">
+                <h2 id="skills-heading">Technical Skills</h2>
+                
+                <article>
+                    <header>
+                        <h3>Frontend Technologies</h3>
+                    </header>
+                    
+                    <ul>
+                        <li><strong>HTML5:</strong> Semantic markup, accessibility, web standards</li>
+                        <li><strong>CSS3:</strong> Grid, Flexbox, animations, responsive design</li>
+                        <li><strong>JavaScript:</strong> ES6+, DOM manipulation, async programming</li>
+                        <li><strong>Frameworks:</strong> React, Vue.js, Angular</li>
+                        <li><strong>Tools:</strong> Webpack, Sass, PostCSS, npm/yarn</li>
+                    </ul>
+                </article>
+                
+                <article>
+                    <header>
+                        <h3>Backend & Database</h3>
+                    </header>
+                    
+                    <ul>
+                        <li><strong>Server Technologies:</strong> Node.js, Python (Django), PHP</li>
+                        <li><strong>Databases:</strong> PostgreSQL, MongoDB, MySQL</li>
+                        <li><strong>APIs:</strong> REST, GraphQL, JSON:API</li>
+                        <li><strong>DevOps:</strong> Docker, AWS, CI/CD pipelines</li>
+                    </ul>
+                </article>
+                
+                <article>
+                    <header>
+                        <h3>Accessibility & Standards</h3>
+                    </header>
+                    
+                    <ul>
+                        <li><strong>WCAG 2.1 AA/AAA</strong> compliance implementation</li>
+                        <li><strong>Screen reader testing</strong> with NVDA, JAWS, VoiceOver</li>
+                        <li><strong>Semantic HTML</strong> and ARIA best practices</li>
+                        <li><strong>Performance optimization</strong> for assistive technologies</li>
+                    </ul>
+                </article>
+            </section>
+
+            <section id="projects" aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Featured Projects</h2>
+                
+                <article>
+                    <header>
+                        <h3>AccessibleECommerce Platform</h3>
+                        <p>Published <time datetime="2025-03-15">March 15, 2025</time></p>
+                    </header>
+                    
+                    <p>A fully accessible e-commerce platform built with React and Node.js, achieving WCAG 2.1 AAA compliance. Features include voice navigation, high contrast modes, and comprehensive keyboard support.</p>
+                    
+                    <figure>
+                        <video controls poster="ecommerce-demo-thumb.jpg" aria-describedby="ecommerce-desc">
+                            <source src="ecommerce-demo.mp4" type="video/mp4">
+                            <source src="ecommerce-demo.webm" type="video/webm">
+                            <track kind="captions" src="ecommerce-demo-captions.vtt" srclang="en" label="English Captions" default>
+                            <track kind="descriptions" src="ecommerce-demo-descriptions.vtt" srclang="en" label="Audio Descriptions">
+                            <p>Your browser doesn't support video. <a href="ecommerce-demo.mp4">Download the demo video</a>.</p>
+                        </video>
+                        <figcaption id="ecommerce-desc">Demo video showing the accessible shopping cart and checkout process with screen reader narration</figcaption>
+                    </figure>
+                    
+                    <aside>
+                        <h4>Technical Highlights</h4>
+                        <ul>
+                            <li>100% keyboard navigable interface</li>
+                            <li>Dynamic ARIA live regions for cart updates</li>
+                            <li>Voice-controlled product search</li>
+                            <li>Automatic alt text generation for product images</li>
+                        </ul>
+                    </aside>
+                    
+                    <footer>
+                        <p>
+                            <a href="https://github.com/alexmorgan/accessible-ecommerce">View Source Code</a> | 
+                            <a href="https://demo.accessibleecommerce.com">Live Demo</a>
+                        </p>
+                    </footer>
+                </article>
+                
+                <article>
+                    <header>
+                        <h3>Educational Podcast Platform</h3>
+                        <p>Published <time datetime="2025-01-20">January 20, 2025</time></p>
+                    </header>
+                    
+                    <p>A comprehensive podcast platform for educational content, featuring automatic transcript generation, chapter navigation, and multi-language support.</p>
+                    
+                    <figure>
+                        <audio controls preload="metadata" aria-describedby="podcast-desc">
+                            <source src="platform-demo.mp3" type="audio/mpeg">
+                            <source src="platform-demo.ogg" type="audio/ogg">
+                            <track kind="subtitles" src="platform-demo-subtitles.vtt" srclang="en" label="English" default>
+                            <track kind="chapters" src="platform-demo-chapters.vtt" srclang="en" label="Chapters">
+                            <p>Your browser doesn't support audio. <a href="platform-demo.mp3">Download the audio demo</a>.</p>
+                        </audio>
+                        <figcaption id="podcast-desc">Audio demo of the platform's accessibility features and user interface</figcaption>
+                    </figure>
+                    
+                    <details>
+                        <summary>Platform Features</summary>
+                        <ul>
+                            <li>Automatic speech-to-text transcription</li>
+                            <li>Interactive transcript with synchronized highlighting</li>
+                            <li>Bookmarking and note-taking functionality</li>
+                            <li>Multi-speed playback with pitch correction</li>
+                            <li>Offline download capabilities</li>
+                        </ul>
+                    </details>
+                    
+                    <footer>
+                        <p>
+                            <a href="https://github.com/alexmorgan/podcast-platform">View Source Code</a> | 
+                            <a href="https://edu-podcasts.demo.com">Live Demo</a>
+                        </p>
+                    </footer>
+                </article>
+            </section>
+
+            <section id="blog" aria-labelledby="blog-heading">
+                <h2 id="blog-heading">Recent Blog Posts</h2>
+                
+                <article>
+                    <header>
+                        <h3><a href="blog/semantic-html-guide.html">The Complete Guide to Semantic HTML in 2025</a></h3>
+                        <p>Published <time datetime="2025-06-15">June 15, 2025</time> | Reading time: <time datetime="PT12M">12 minutes</time></p>
+                    </header>
+                    
+                    <p>Semantic HTML is more than just using the right tags—it's about creating meaningful, accessible content that serves all users. This comprehensive guide covers modern semantic practices and their impact on SEO and accessibility.</p>
+                    
+                    <section>
+                        <h4>What You'll Learn</h4>
+                        <ul>
+                            <li>Modern semantic elements and their proper usage</li>
+                            <li>ARIA integration with semantic HTML</li>
+                            <li>Common semantic markup mistakes to avoid</li>
+                            <li>Tools for testing semantic structure</li>
+                        </ul>
+                    </section>
+                    
+                    <footer>
+                        <p>Tags: <a href="#html">HTML</a>, <a href="#accessibility">Accessibility</a>, <a href="#seo">SEO</a></p>
+                    </footer>
+                </article>
+                
+                <article>
+                    <header>
+                        <h3><a href="blog/accessible-forms.html">Building Truly Accessible Forms: Beyond the Basics</a></h3>
+                        <p>Published <time datetime="2025-05-28">May 28, 2025</time> | Reading time: <time datetime="PT15M">15 minutes</time></p>
+                    </header>
+                    
+                    <p>Forms are the backbone of web interaction, yet they're often the biggest barrier for users with disabilities. Learn advanced techniques for creating forms that work for everyone.</p>
+                    
+                    <blockquote>
+                        <p>"Accessible forms aren't just about compliance—they're about creating better experiences for all users."</p>
+                    </blockquote>
+                    
+                    <footer>
+                        <p>Tags: <a href="#forms">Forms</a>, <a href="#accessibility">Accessibility</a>, <a href="#ux">User Experience</a></p>
+                    </footer>
+                </article>
+            </section>
+
+            <section id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Get in Touch</h2>
+                
+                <article>
+                    <header>
+                        <h3>Let's Work Together</h3>
+                    </header>
+                    
+                    <p>I'm always interested in discussing new projects, especially those focused on accessibility and inclusive design. Whether you need consultation, development work, or training for your team, I'd love to hear from you.</p>
+                    
+                    <address>
+                        <p><strong>Contact Information:</strong></p>
+                        <ul>
+                            <li>Email: <a href="mailto:alex@example.com">alex@example.com</a></li>
+                            <li>Phone: <a href="tel:+14155551234">(415) 555-1234</a></li>
+                            <li>LinkedIn: <a href="https://linkedin.com/in/alexmorgan" target="_blank">linkedin.com/in/alexmorgan</a></li>
+                            <li>GitHub: <a href="https://github.com/alexmorgan" target="_blank">github.com/alexmorgan</a></li>
+                        </ul>
+                    </address>
+                </article>
+                
+                <form action="contact-submit.php" method="post" aria-labelledby="contact-form-heading">
+                    <h3 id="contact-form-heading">Send a Message</h3>
+                    
+                    <fieldset>
+                        <legend>Your Information</legend>
+                        
+                        <label for="contact-name">Full Name *</label>
+                        <input type="text" id="contact-name" name="name" required aria-describedby="name-help">
+                        <small id="name-help">Your full name as you'd like me to address you</small>
+                        
+                        <label for="contact-email">Email Address *</label>
+                        <input type="email" id="contact-email" name="email" required aria-describedby="email-help">
+                        <small id="email-help">I'll use this email to respond to your message</small>
+                        
+                        <label for="contact-phone">Phone Number</label>
+                        <input type="tel" id="contact-phone" name="phone" aria-describedby="phone-help">
+                        <small id="phone-help">Optional - include if you'd prefer a phone conversation</small>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Project Details</legend>
+                        
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type" aria-describedby="project-help">
+                            <option value="">Select project type</option>
+                            <option value="consultation">Accessibility Consultation</option>
+                            <option value="development">Custom Development</option>
+                            <option value="training">Team Training</option>
+                            <option value="audit">Accessibility Audit</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <small id="project-help">This helps me understand your needs better</small>
+                        
+                        <label for="timeline">Desired Timeline</label>
+                        <input type="radio" id="timeline-urgent" name="timeline" value="urgent">
+                        <label for="timeline-urgent">Urgent (within 2 weeks)</label>
+                        
+                        <input type="radio" id="timeline-month" name="timeline" value="month">
+                        <label for="timeline-month">Within a month</label>
+                        
+                        <input type="radio" id="timeline-quarter" name="timeline" value="quarter">
+                        <label for="timeline-quarter">Within 3 months</label>
+                        
+                        <input type="radio" id="timeline-flexible" name="timeline" value="flexible" checked>
+                        <label for="timeline-flexible">Flexible timing</label>
+                        
+                        <label for="message">Project Description *</label>
+                        <textarea id="message" name="message" rows="6" required aria-describedby="message-help" placeholder="Tell me about your project, goals, and any specific requirements..."></textarea>
+                        <small id="message-help">Please include as much detail as possible about your project requirements</small>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Preferences</legend>
+                        
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                        <label for="newsletter">Subscribe to my accessibility newsletter</label>
+                        
+                        <input type="checkbox" id="portfolio-updates" name="portfolio-updates" value="yes">
+                        <label for="portfolio-updates">Notify me about new portfolio projects</label>
+                    </fieldset>
+                    
+                    <button type="submit">Send Message</button>
+                    <button type="reset">Clear Form</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav aria-label="Footer navigation">
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#accessibility">Accessibility Statement</a></li>
+                    <li><a href="#sitemap">Sitemap</a></li>
+                </ul>
+            </nav>
+            
+            <p>&copy; <time datetime="2025">2025</time> Alex Morgan. All rights reserved.</p>
+            <p><small>This website is built with semantic HTML5, follows WCAG 2.1 AA guidelines, and is tested with screen readers.</small></p>
+            
+            <address>
+                <p>San Francisco, California | <a href="mailto:alex@example.com">alex@example.com</a></p>
+            </address>
+        </div>
+    </footer>
+
+    <!-- Hidden content for screen readers -->
+    <div class="sr-only">
+        <h2>Accessibility Features</h2>
+        <p>This website includes the following accessibility features:</p>
+        <ul>
+            <li>Semantic HTML5 structure with proper heading hierarchy</li>
+            <li>Keyboard navigation support throughout</li>
+            <li>High contrast color scheme meeting WCAG AA standards</li>
+            <li>Alternative text for all meaningful images</li>
+            <li>Captions and transcripts for multimedia content</li>
+            <li>Screen reader optimized form labels and descriptions</li>
+        </ul>
+    </div>
+</body>
+</html>
